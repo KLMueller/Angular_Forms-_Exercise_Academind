@@ -1,4 +1,6 @@
-# AngularForms
+# AngularForms-Exercise Academind
+
+This project was created as extra Forms practice while watching Maximillians 'Handling Forms in Angular Apps' section of his Academind course. It uses both template-driven and reactive-driven approaches to create two seperate forms.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.4.
 
