@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form [formGroup]="newForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="projectName">Project Name</label>
+          <input
+            type="text"
+            id="projectName"
+            class="form-control"
+            formControlName="projectName"
+          />
+          <span
+            *ngIf="
+              !newForm.get('projectName').valid &&
+              newForm.get('projectName').touched
+            "
+            class="help-clock text-danger"
+          >
+            <span *ngIf="newForm.get('projectName').errors['nameIsForbidden']">
+              This project name is invalid.
+            </span>
+            <span *ngIf="newForm.get('projectName').errors['required']">
+              This field is required.
+            </span>
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="emailReactive">email</label>
+          <input
+            type="text"
+            id="emailReactive"
+            class="form-control"
+            formControlName="emailReactive"
+          />
+        </div>
+        <div class="form-group">
+          <label for="status">Project Status</label>
+          <select
+            id="status"
+            name="status"
+            class="form-control"
+            formControlName="status"
+          >
+            <option value="stable">Stable</option>
+            <option value="critical">Critical</option>
+            <option value="finished">Finished</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Create Project</button>
+      </form>
+    </div>
+  </div>
+</div>
